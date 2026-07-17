@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/personagem/idle_1.png" id="1"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Personagem" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(2, 2)
+texture = ExtResource("1")

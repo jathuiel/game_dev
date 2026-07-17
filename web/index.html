@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Protótipo 2D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game" width="1080" height="1920" class="hidden"></canvas>
+
+<div id="screen-menu" class="screen"></div>
+<div id="screen-config" class="screen hidden"></div>
+<div id="screen-personagem" class="screen hidden"></div>
+
+<!-- markup de cada tela vive em screens/*.js (script src, nao fetch: fetch de
+     arquivo local e bloqueado por CORS quando o index.html e aberto direto
+     via file://, sem servidor) -->
+<script src="screens/menu.js"></script>
+<script src="screens/config.js"></script>
+<script src="screens/personagem.js"></script>
+
+<!-- Código do jogo em js/, um script por assunto. SEM build (vanilla,
+     script src puro) — por isso a ORDEM abaixo importa: cada arquivo pode
+     usar consts/funções dos arquivos anteriores, mas não dos seguintes.
+     Se for adicionar um arquivo novo, encaixe-o na posição certa dessa
+     cadeia de dependência (ou olhe o topo de cada arquivo pra ver o que
+     ele espera que já exista). -->
+<script src="js/constantes.js"></script>  <!-- tamanhos, escala, hash do mapa -->
+<script src="js/tilesets.js"></script>    <!-- onde cada peça fica dentro dos PNGs de tileset -->
+<script src="js/mapa.js"></script>        <!-- layout do mapa, colisão, colecionáveis -->
+<script src="js/assets.js"></script>      <!-- carregamento de imagens, terreno pré-renderizado -->
+<script src="js/entidades.js"></script>   <!-- estado e física do personagem -->
+<script src="js/telas.js"></script>       <!-- menu / config / escolha de personagem -->
+<script src="js/input.js"></script>       <!-- teclado e joystick virtual -->
+<script src="js/render.js"></script>      <!-- tudo que é desenhado no canvas + HUD -->
+<script src="js/main.js"></script>        <!-- loop principal, resize, start -->
+</body>
+</html>
