@@ -4,7 +4,7 @@
 const T = 32;                    // tamanho do tile em px de mundo (escala 2x da v1)
 const MAP_W = 40, MAP_H = 24;    // tiles
 const MAP_PX_W = MAP_W * T, MAP_PX_H = MAP_H * T; // 1280x768
-const VIEW_W = 480, VIEW_H = 220; // area visivel = canvas, 1:1 (sem scale)
+const VIEW_W = 1280, VIEW_H = 720; // area visivel = canvas (1280x720), 1:1 (sem scale)
 const SPEED = 240;                // px de mundo / s
 const CW = 20, CH = 24;           // celula dos colecionaveis (nao usa T)
 
